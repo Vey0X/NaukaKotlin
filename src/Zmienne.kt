@@ -2,7 +2,7 @@ fun main(args: Array<String>) {
 
     print("Podaj pierwszą liczbę: ")
     var a = readLine()!!.toInt()
-    print("Podaj drugą liczbę: ") //Test komentarz
+    print("Podaj drugą liczbę: ") //Test komentarz 1
     var b = readLine()!!.toInt()
 
     fun dodaj() {
