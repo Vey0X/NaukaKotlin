@@ -18,7 +18,16 @@ Kolejne kroki: logowanie/rejestracja, interfejs graficzny.
 Kod programu poniżej tego komentarza
  */
 
-fun main(){
+fun main(args: Array<String>){
 
+    var firstname = String?
+    var lastname = String?
+
+    println("Witaj!")
+    println("Poniżej podaj swoje dane.")
+    println("Imię: ")
+    firstname = readLine()!!
+    println("Nazwisko: ")
+    lastname = readLine()!!
 
 }
