@@ -1,5 +1,6 @@
-fun main(args: Array<String>) {
 
+
+ fun dodawanieLiczb() {
 
     var a = 4
     var b = 2
