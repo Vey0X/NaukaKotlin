@@ -18,7 +18,7 @@ Kolejne kroki: logowanie/rejestracja, interfejs graficzny.
 Kod programu poniżej tego komentarza
  */
 
-var bokA: Int = 0
+var bokA: Int = 0 // by mieć dostęp do zmiennej też w innej części kodu
 
 fun main(args: Array<String>){
 
