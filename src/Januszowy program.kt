@@ -1,4 +1,4 @@
-fun main(args: Array<String>) {
+fun JanuszowyProgram(args: Array<String>) {
 
     var CzySieRusza: String
     var CzyPowinnoSieRuszac: String

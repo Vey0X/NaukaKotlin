@@ -1,4 +1,4 @@
-fun main(args: Array<String>) {
+fun LiczbyPażysteIWiększeOd10(args: Array<String>) {
 
     println("Witaj w programie który sprawdza czy podana liczba jest większa niż 10")
     println("oraz jeżeli liczba jest mniejsza niż 10 sprawdza czy jest parzysta.")

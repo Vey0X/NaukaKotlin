@@ -1,4 +1,4 @@
-fun main(args: Array<String>) {
+fun zmienne(args: Array<String>) {
 
     print("Podaj pierwszą liczbę: ")
     var a = readLine()!!.toInt()

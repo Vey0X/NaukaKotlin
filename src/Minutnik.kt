@@ -1,4 +1,4 @@
-fun main(args: Array<String>) {
+fun minutnik(args: Array<String>) {
 
     println("Witaj w programie odliczającym czas")
     print("Wpisz ile sekund chcesz odmierzać: ")

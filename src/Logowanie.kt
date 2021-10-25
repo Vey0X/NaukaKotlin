@@ -1,4 +1,4 @@
-fun main(args: Array<String>) {
+fun logowanie(args: Array<String>) {
 
     var login: String = "Kamil"
     var correctPassword: String = "123"

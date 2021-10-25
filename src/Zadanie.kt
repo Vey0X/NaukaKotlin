@@ -18,12 +18,16 @@ Kolejne kroki: logowanie/rejestracja, interfejs graficzny.
 Kod programu poniżej tego komentarza
  */
 
-var bokA: Int = 0 // by mieć dostęp do zmiennej też w innej części kodu
+ // by mieć dostęp do zmiennej też w innej części kodu
+
+
+
+var firstname = "asd" //to samo co powyżej
+var lastname = "asd"
+
 
 fun main(args: Array<String>){
 
-    var firstname = "asd"
-    var lastname = "asd"
 
     println("Witaj!")
     println("Poniżej podaj swoje dane.")
@@ -31,23 +35,38 @@ fun main(args: Array<String>){
     firstname = readLine()!!
     println("Nazwisko: ")
     lastname = readLine()!!
-
+    wprowadzDane()
 }
 
 
-/*
-ta funkcja wprowadza dane bokA, ale fajnie gdyby mogła wprowadzać też inne boki
+fun wprowadzDane(bok: Int = 0): Int{
 
-fun wprowadzBok(bok: Int = 1): Int {
+    var bokA: Int
+    var bokB: Int
+    var bokC: Int
+    var bokD: Int
 
-        return bok
-    }
-}
+    println("Witaj $firstname!")
 
- */
+    println("Wprowadź bok a: ")
+    bokA = readLine()!!.toInt()
 
-fun wprowadzDane(){
-    println("Witaj!")
-    println("wprowadź bok a")
-    bokA = 1
+    println("Wprowadź bok b: ")
+    bokB = readLine()!!.toInt()
+
+    println("Wprowadź bok c: ")
+    bokC = readLine()!!.toInt()
+
+    println("Wprowadź bok d: ")
+    bokD = readLine()!!.toInt()
+
+    println("Wprowadzono wszystkie dane.")
+
+    return bokA.toInt()
+
+    return bokB.toInt()
+
+    return bokC.toInt()
+
+    return bokD.toInt()
 }
