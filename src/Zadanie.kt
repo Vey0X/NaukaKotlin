@@ -24,7 +24,7 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd" //to samo co powyżej
 var lastname = "asd"
-
+var x : Int = 0
 
 fun main(args: Array<String>){
 
@@ -64,9 +64,34 @@ fun wprowadzDane(bok: Int = 0): Int{
 
     return bokA.toInt()
 
-    return bokB.toInt()
+    return bokB.toInt()     //Ta część kodu nigdy nie zostanie wykonana
 
-    return bokC.toInt()
+    return bokC.toInt()     //Ta część kodu nigdy nie zostanie wykonana
 
-    return bokD.toInt()
+    return bokD.toInt()     //Ta część kodu nigdy nie zostanie wykonana
 }
+
+fun wprowadzDlugosc(odcinek: Int): Int{
+    println(")
+    x =
+    return x;
+}
+
+fun liczPoleKwadratu(wprowadzDlugosc(x)): Int{
+
+}
+
+/*
+  Kontynuacja zadania
+ mamy funkcje fun wprowadzDlugosc(odcinek: Int): Int{ tutaj jest ciało funkcji.  }
+ - uzupełnij jej treść by podczas jej wykonywania prosiła usera o dane. Potem zajmiemy się sprawdzaniem poprawnosci wprowadzonych danych.
+ ( trochę już napisałem, musisz poprawić błędy i uzupełnić ;) )
+
+ Druga funkcja będzie liczyć pole kwadratu:
+ Czyli
+
+ funkcja fun liczPoleKwadratu(wprowadzDlugosc(x)): Int{ tutaj wykonaj oblcizenia i zrob return wyniku}
+ - tutaj danymi wprowadzonymi jest poprzednia funkcja. W niej uzupełnij by poprawnie zwracała pole kwadratu
+
+
+ */
