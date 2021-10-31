@@ -82,7 +82,7 @@ fun wprowadzDlugosc(odcinek: Int = 0): Int{
 
 fun liczPoleKwadratu(): Int{
 
-    return x * x = polekwadratu;print("Pole kwadratu to $polekwadratu")
+   return x
 }
 
 /*
