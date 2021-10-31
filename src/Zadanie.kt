@@ -25,6 +25,7 @@ Kod programu poniżej tego komentarza
 var firstname = "asd" //to samo co powyżej
 var lastname = "asd"
 var x : Int = 0
+var polekwadratu : Int = 0
 
 fun main(args: Array<String>){
 
@@ -36,6 +37,8 @@ fun main(args: Array<String>){
     println("Nazwisko: ")
     lastname = readLine()!!
     wprowadzDane()
+    wprowadzDlugosc()
+    liczPoleKwadratu()
 }
 
 
@@ -71,14 +74,15 @@ fun wprowadzDane(bok: Int = 0): Int{
     return bokD.toInt()     //Ta część kodu nigdy nie zostanie wykonana
 }
 
-fun wprowadzDlugosc(odcinek: Int): Int{
-    println(")
-    x =
+fun wprowadzDlugosc(odcinek: Int = 0): Int{
+
+    x = readLine()!!.toInt()
     return x;
 }
 
-fun liczPoleKwadratu(wprowadzDlugosc(x)): Int{
+fun liczPoleKwadratu(): Int{
 
+    return x * x = polekwadratu;print("Pole kwadratu to $polekwadratu")
 }
 
 /*
