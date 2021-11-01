@@ -36,24 +36,24 @@ fun main(args: Array<String>){
     println("1 = kwadratu, 2 = prostokąta, 3 = trójkąta")
     menuwyboru = readLine()!!.toInt()
 
-    while (menuwyboru == 1){
-        liczPoleKwadratu()
-        println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
+    while(menuwyboru > 0) {
+        if (menuwyboru == 1) {
+            liczPoleKwadratu()
+            println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
+        } else if (menuwyboru == 2) {
+            liczPoleProstokata()
+            println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(), wprowadzDlugosc()))
+        } else (menuwyboru == 3){
+            liczPoleTrojkata()
+            println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
+        }
         break
+            
+        
     }
+}
 
-    while (menuwyboru == 2){
-        liczPoleProstokata()
-        println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(),wprowadzDlugosc()))
-        break
-    }
-
-
-    while (menuwyboru == 3){
-        liczPoleTrojkata()
-        println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
-        break
-    }
+private operator fun Boolean.invoke(function: () -> Unit) {
 
 }
 
