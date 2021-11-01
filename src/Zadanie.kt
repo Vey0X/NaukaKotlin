@@ -31,7 +31,8 @@ fun main(args: Array<String>){
     lastname = readLine()!!
 
     println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
-    println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc()))
+    println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(),wprowadzDlugosc()))
+    println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
 }
 
 fun wprowadzDlugosc(): Int{
@@ -44,18 +45,10 @@ fun liczPoleKwadratu(dlugosc: Int = 0): Int{
     return dlugosc*dlugosc;
 }
 
-
-/*
-Kolejne zadanie
-na takiej samej podstawie dodaj funkcje która liczy pole prostokąta
-
-na gwiazdkę. zmodyfikuj wprowadzDlugosc() by za każdym razem jej wywołania wyswietlało kolejny numer boku
-np:
-gdy liczy pole kwadratu podajesz jeden bok wiec 1. Potem gdy liczy trójkąt będzie 2, 3, 4.
-
- */
-
-fun liczPoleProstokata(dlugosc1: Int = 0, dlugosc2: Int = 0 ): Int{
+fun liczPoleProstokata(dlugosc1: Int = 0, dlugosc2: Int = 0): Int{
   return dlugosc1*dlugosc2
+}
 
+fun liczPoleTrojkata(dlugosct1: Int = 0, dlugosct2: Int = 0): Int{
+    return dlugosct1*dlugosct2/2
 }
