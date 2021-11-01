@@ -20,6 +20,8 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
+var menuwyboru = 0
+
 
 fun main(args: Array<String>){
     
@@ -30,10 +32,31 @@ fun main(args: Array<String>){
     println("Nazwisko: ")
     lastname = readLine()!!
 
-    println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
-    println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(),wprowadzDlugosc()))
-    println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
+    println("Wybierz czego pole chcesz obliczyć.")
+    println("1 = kwadratu, 2 = prostokąta, 3 = trójkąta")
+    menuwyboru = readLine()!!.toInt()
+
+    while (menuwyboru == 1){
+        liczPoleKwadratu()
+        println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
+        break
+    }
+
+    while (menuwyboru == 2){
+        liczPoleProstokata()
+        println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(),wprowadzDlugosc()))
+        break
+    }
+
+
+    while (menuwyboru == 3){
+        liczPoleTrojkata()
+        println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
+        break
+    }
+
 }
+
 
 fun wprowadzDlugosc(): Int{
     println("Wprowadź długość boku nr 1: ")
