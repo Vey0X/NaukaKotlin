@@ -18,84 +18,46 @@ Kolejne kroki: logowanie/rejestracja, interfejs graficzny.
 Kod programu poniżej tego komentarza
  */
 
- // by mieć dostęp do zmiennej też w innej części kodu
-
-
-
 var firstname = "asd" //to samo co powyżej
 var lastname = "asd"
-var x : Int = 0
-var polekwadratu : Int = 0
 
 fun main(args: Array<String>){
-
-
+    
     println("Witaj!")
     println("Poniżej podaj swoje dane.")
     println("Imię: ")
     firstname = readLine()!!
     println("Nazwisko: ")
     lastname = readLine()!!
-    wprowadzDane()
-    wprowadzDlugosc()
-    liczPoleKwadratu()
+   // wprowadzDlugosc()     tego tutaj nie trzeba
+    //liczPoleKwadratu()
+
+    ////////////// Rozwiązanie
+    println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc())) // Tutaj zobacz sobie że komputer najpierw prosi o dane a potem wyswietla pole
+
+    // Poczytaj sobie o "kolejka a stos"
+
 }
 
-
-fun wprowadzDane(bok: Int = 0): Int{
-
-    var bokA: Int
-    var bokB: Int
-    var bokC: Int
-    var bokD: Int
-
-    println("Witaj $firstname!")
-
-    println("Wprowadź bok a: ")
-    bokA = readLine()!!.toInt()
-
-    println("Wprowadź bok b: ")
-    bokB = readLine()!!.toInt()
-
-    println("Wprowadź bok c: ")
-    bokC = readLine()!!.toInt()
-
-    println("Wprowadź bok d: ")
-    bokD = readLine()!!.toInt()
-
-    println("Wprowadzono wszystkie dane.")
-
-    return bokA.toInt()
-
-    return bokB.toInt()     //Ta część kodu nigdy nie zostanie wykonana
-
-    return bokC.toInt()     //Ta część kodu nigdy nie zostanie wykonana
-
-    return bokD.toInt()     //Ta część kodu nigdy nie zostanie wykonana
-}
-
-fun wprowadzDlugosc(odcinek: Int = 0): Int{
-
-    x = readLine()!!.toInt()
+fun wprowadzDlugosc(): Int{
+    println("Wprowadź długość boku nr 1: ")   //tutaj miało poprosić o długość
+    val x = readLine()!!.toInt()
     return x;
 }
 
-fun liczPoleKwadratu(): Int{
-
-    return x * x = polekwadratu;print("Pole kwadratu to $polekwadratu")
+fun liczPoleKwadratu(dlugosc: Int = 0): Int{    //tutaj w () powinien być parametr, tak jak w zadaniu
+    return dlugosc*dlugosc;
 }
+// w miare rozwiązywania kasuj moje komentarze. Bede wiedizal ze przeczytales
+
+
 
 /*
-  Kontynuacja zadania
- mamy funkcje fun wprowadzDlugosc(odcinek: Int): Int{ tutaj jest ciało funkcji.  }
- - uzupełnij jej treść by podczas jej wykonywania prosiła usera o dane. Potem zajmiemy się sprawdzaniem poprawnosci wprowadzonych danych.
- ( trochę już napisałem, musisz poprawić błędy i uzupełnić ;) )
+Kolejne zadanie
+na takiej samej podstawie dodaj funkcje która liczy pole prostokąta
 
- Druga funkcja będzie liczyć pole kwadratu:
- Czyli
-
- funkcja fun liczPoleKwadratu(wprowadzDlugosc(x)): Int{ tutaj wykonaj oblcizenia i zrob return wyniku}
- - tutaj danymi wprowadzonymi jest poprzednia funkcja. W niej uzupełnij by poprawnie zwracała pole kwadratu
-
+na gwiazdkę. zmodyfikuj wprowadzDlugosc() by za każdym razem jej wywołania wyswietlało kolejny numer boku
+np:
+gdy liczy pole kwadratu podajesz jeden bok wiec 1. Potem gdy liczy trójkąt będzie 2, 3, 4.
 
  */
