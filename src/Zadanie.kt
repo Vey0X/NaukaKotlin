@@ -18,7 +18,7 @@ Kolejne kroki: logowanie/rejestracja, interfejs graficzny.
 Kod programu poniżej tego komentarza
  */
 
-var firstname = "asd" //to samo co powyżej
+var firstname = "asd"
 var lastname = "asd"
 
 fun main(args: Array<String>){
@@ -29,27 +29,20 @@ fun main(args: Array<String>){
     firstname = readLine()!!
     println("Nazwisko: ")
     lastname = readLine()!!
-   // wprowadzDlugosc()     tego tutaj nie trzeba
-    //liczPoleKwadratu()
 
-    ////////////// Rozwiązanie
-    println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc())) // Tutaj zobacz sobie że komputer najpierw prosi o dane a potem wyswietla pole
-
-    // Poczytaj sobie o "kolejka a stos"
-
+    println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
+    println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc()))
 }
 
 fun wprowadzDlugosc(): Int{
-    println("Wprowadź długość boku nr 1: ")   //tutaj miało poprosić o długość
+    println("Wprowadź długość boku nr 1: ")
     val x = readLine()!!.toInt()
     return x;
 }
 
-fun liczPoleKwadratu(dlugosc: Int = 0): Int{    //tutaj w () powinien być parametr, tak jak w zadaniu
+fun liczPoleKwadratu(dlugosc: Int = 0): Int{
     return dlugosc*dlugosc;
 }
-// w miare rozwiązywania kasuj moje komentarze. Bede wiedizal ze przeczytales
-
 
 
 /*
@@ -61,3 +54,8 @@ np:
 gdy liczy pole kwadratu podajesz jeden bok wiec 1. Potem gdy liczy trójkąt będzie 2, 3, 4.
 
  */
+
+fun liczPoleProstokata(dlugosc1: Int = 0, dlugosc2: Int = 0 ): Int{
+  return dlugosc1*dlugosc2
+
+}
