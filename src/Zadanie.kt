@@ -22,13 +22,15 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
-
+var menuwyboru: Int = 0
 
 fun main(args: Array<String>){
     
     println("Witaj!")
     wprowadzDaneUzytkownika()
     wyswietlmenu()
+    wprowadzOpcjeMenu()
+    sprawdzanieWyboruOpcji()
 }
 
 private operator fun Boolean.invoke(function: () -> Unit) {
@@ -54,17 +56,16 @@ fun liczPoleTrojkata(dlugosct1: Int = 0, dlugosct2: Int = 0): Int{
     return dlugosct1*dlugosct2/2
 }
 
-fun wyswietlmenu(): Int {
-
-    var menuwyboru: Int = 0
+fun wyswietlmenu() {
 
     println("Wybierz czego pole chcesz obliczyć.")
     println("1. Kwadratu")
     println("2. Prostokąta")
     println("3. Trójkąta")
     println("4. Chcę wyłączyć program")
+}
 
-    menuwyboru = readLine()!!.toInt()
+fun sprawdzanieWyboruOpcji(): Int{
 
     while(menuwyboru > 0) {
         if (menuwyboru == 1) {
@@ -94,4 +95,9 @@ fun wprowadzDaneUzytkownika(): String {
     println("Nazwisko: ")
     lastname = readLine()!!
     return firstname
+}
+
+fun wprowadzOpcjeMenu(): Int {
+    menuwyboru = readLine()!!.toInt()
+    return menuwyboru
 }
