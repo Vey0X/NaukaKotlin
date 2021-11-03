@@ -20,21 +20,14 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
-var menuwyboru: Int = 0
 
 fun main(args: Array<String>){
     
     println("Witaj!")
     wprowadzDaneUzytkownika()
     wyswietlmenu()
-    wprowadzOpcjeMenu()
-    sprawdzanieWyboruOpcji()
+    sprawdzanieWyboruOpcji(wprowadzOpcjeMenu())
 }
-
-private operator fun Boolean.invoke(function: () -> Unit) {
-
-}
-
 
 fun wprowadzDlugosc(): Int{
     println("Wprowadź długość boku nr 1: ")
@@ -54,8 +47,7 @@ fun liczPoleTrojkata(dlugosct1: Int = 0, dlugosct2: Int = 0): Int{
     return dlugosct1*dlugosct2/2
 }
 
-fun wyswietlmenu(wybierzopcjemenu: Int = 0) {
-
+fun wyswietlmenu() {
     println("Wybierz czego pole chcesz obliczyć.")
     println("1. Kwadratu")
     println("2. Prostokąta")
@@ -63,8 +55,7 @@ fun wyswietlmenu(wybierzopcjemenu: Int = 0) {
     println("4. Chcę wyłączyć program")
 }
 
-fun sprawdzanieWyboruOpcji(): Int{
-
+fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
     while(menuwyboru > 0) {
         if (menuwyboru == 1) {
             liczPoleKwadratu()
@@ -75,18 +66,15 @@ fun sprawdzanieWyboruOpcji(): Int{
         } else if (menuwyboru == 3){
             liczPoleTrojkata()
             println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
-        } else (menuwyboru == 4){
+        } else if (menuwyboru == 4){
             println("Opuszczanie programu...")
         }
         break
-
-
     }
     return menuwyboru
 }
 
 fun wprowadzDaneUzytkownika(): String {
-
     println("Poniżej podaj swoje dane.")
     println("Imię: ")
     firstname = readLine()!!
@@ -96,6 +84,14 @@ fun wprowadzDaneUzytkownika(): String {
 }
 
 fun wprowadzOpcjeMenu(): Int {
-    menuwyboru = readLine()!!.toInt()
+    var menuwyboru = readLine()!!.toInt()
     return menuwyboru
 }
+
+/*
+Kolejne zadanie
+Program ma cały czas wracać do początku po obliczeniu pola.
+Menu musi posiadać ostatni element, Koniec. Po wybraniu 'Koniec' zakończy program
+
+Na gwiazdkę. Spróbuj za każdym wynikiem wyświetlić 'Naciśnij enter' Po naciśnięciu 'enter' ładnie wyczyści cały tekst i program wróci na początek,(wyswietli menu)
+ */
