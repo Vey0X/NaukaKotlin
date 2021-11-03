@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 /*
 Zadanie
 
@@ -56,7 +54,7 @@ fun liczPoleTrojkata(dlugosct1: Int = 0, dlugosct2: Int = 0): Int{
     return dlugosct1*dlugosct2/2
 }
 
-fun wyswietlmenu() {
+fun wyswietlmenu(wybierzopcjemenu: Int = 0) {
 
     println("Wybierz czego pole chcesz obliczyć.")
     println("1. Kwadratu")
