@@ -1,3 +1,5 @@
+import kotlin.system.exitProcess
+
 /*
 Zadanie
 
@@ -20,37 +22,13 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
-var menuwyboru = 0
 
 
 fun main(args: Array<String>){
     
     println("Witaj!")
-    println("Poniżej podaj swoje dane.")
-    println("Imię: ")
-    firstname = readLine()!!
-    println("Nazwisko: ")
-    lastname = readLine()!!
-
-    println("Wybierz czego pole chcesz obliczyć.")
-    println("1 = kwadratu, 2 = prostokąta, 3 = trójkąta")
-    menuwyboru = readLine()!!.toInt()
-
-    while(menuwyboru > 0) {
-        if (menuwyboru == 1) {
-            liczPoleKwadratu()
-            println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
-        } else if (menuwyboru == 2) {
-            liczPoleProstokata()
-            println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(), wprowadzDlugosc()))
-        } else (menuwyboru == 3){
-            liczPoleTrojkata()
-            println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
-        }
-        break
-            
-        
-    }
+    wprowadzDaneUzytkownika()
+    wyswietlmenu()
 }
 
 private operator fun Boolean.invoke(function: () -> Unit) {
@@ -74,4 +52,46 @@ fun liczPoleProstokata(dlugosc1: Int = 0, dlugosc2: Int = 0): Int{
 
 fun liczPoleTrojkata(dlugosct1: Int = 0, dlugosct2: Int = 0): Int{
     return dlugosct1*dlugosct2/2
+}
+
+fun wyswietlmenu(): Int {
+
+    var menuwyboru: Int = 0
+
+    println("Wybierz czego pole chcesz obliczyć.")
+    println("1. Kwadratu")
+    println("2. Prostokąta")
+    println("3. Trójkąta")
+    println("4. Chcę wyłączyć program")
+
+    menuwyboru = readLine()!!.toInt()
+
+    while(menuwyboru > 0) {
+        if (menuwyboru == 1) {
+            liczPoleKwadratu()
+            println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
+        } else if (menuwyboru == 2) {
+            liczPoleProstokata()
+            println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(), wprowadzDlugosc()))
+        } else if (menuwyboru == 3){
+            liczPoleTrojkata()
+            println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
+        } else (menuwyboru == 4){
+            println("Opuszczanie programu...")
+        }
+        break
+
+
+    }
+    return menuwyboru
+}
+
+fun wprowadzDaneUzytkownika(): String {
+
+    println("Poniżej podaj swoje dane.")
+    println("Imię: ")
+    firstname = readLine()!!
+    println("Nazwisko: ")
+    lastname = readLine()!!
+    return firstname
 }
