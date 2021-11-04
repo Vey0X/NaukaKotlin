@@ -22,8 +22,8 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
-var koniec = 1
-var witajwprowadzdaneuzytkownika = 1
+var koniec = 1                          // tutaj skorzystaj z True False. Program będzie bardziej przejrzysty typ danych to Boolean
+var witajwprowadzdaneuzytkownika = 1        //nie rób takich tasiemców ;)
 
 fun main(args: Array<String>){
     while(koniec == 1) {
@@ -129,9 +129,5 @@ fun nacisnijenterabykontynuowac(): Int {
 
 
 /*
-Kolejne zadanie
-Program ma cały czas wracać do początku po obliczeniu pola.
-Menu musi posiadać ostatni element, Koniec. Po wybraniu 'Koniec' zakończy program
-
 Na gwiazdkę. Spróbuj za każdym wynikiem wyświetlić 'Naciśnij enter' Po naciśnięciu 'enter' ładnie wyczyści cały tekst i program wróci na początek,(wyswietli menu)
  */
