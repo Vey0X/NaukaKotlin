@@ -1,4 +1,3 @@
-import kotlin.system.exitProcess
 
 /*
 Zadanie
@@ -22,22 +21,22 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
-var koniec = 1                          // tutaj skorzystaj z True False. Program będzie bardziej przejrzysty typ danych to Boolean
-var witajwprowadzdaneuzytkownika = 1        //nie rób takich tasiemców ;)
+var koniec = false
+var wylFunWProg = true
 
 fun main(args: Array<String>){
-    while(koniec == 1) {
+    while(koniec == false) {
         witaj()
         wprowadzDaneUzytkownika()
         wyswietlmenu()
         sprawdzanieWyboruOpcji(wprowadzOpcjeMenu())
-        wylaczFunkcjeWitajIWprowadzDaneUzytkownika()
+        wylaczFunkcje()
         nacisnijenterabykontynuowac()
     }
 }
 
 fun witaj(): String{
-    while(witajwprowadzdaneuzytkownika == 1){
+    while(wylFunWProg == true){
         println("Witaj!")
     break
     }
@@ -84,7 +83,7 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
             println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
         } else if (menuwyboru == 4){
             println("Opuszczanie programu...")
-            koniec = 2
+            koniec = true
         }
         break
     }
@@ -93,7 +92,7 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
 
 fun wprowadzDaneUzytkownika(): String {
 
-    while(witajwprowadzdaneuzytkownika == 1){
+    while(wylFunWProg == true){
         println("Poniżej podaj swoje dane.")
         println("Imię: ")
         firstname = readLine()!!
@@ -110,19 +109,22 @@ fun wprowadzOpcjeMenu(): Int {
     return menuwyboru
 }
 
-fun wylaczFunkcjeWitajIWprowadzDaneUzytkownika(): Int{
-    while(witajwprowadzdaneuzytkownika == 1) {
-        witajwprowadzdaneuzytkownika = 2
+fun wylaczFunkcje(): Boolean{
+    while(wylFunWProg == true) {
+        wylFunWProg = false
     break
     }
-    return  witajwprowadzdaneuzytkownika
+    return wylFunWProg
 }
 
 fun nacisnijenterabykontynuowac(): Int {
-    while(koniec == 1){
+    while(koniec == false){
     println("Naciśnij ENTER aby kontynuować.")
     readLine()
-        break
+        for(x in 1..25){
+            println("")
+        }
+      break
     }
     return 0
 }
