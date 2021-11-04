@@ -1,3 +1,5 @@
+import kotlin.system.exitProcess
+
 /*
 Zadanie
 
@@ -20,14 +22,28 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
+var koniec = 1
+var witajwprowadzdaneuzytkownika = 1
 
 fun main(args: Array<String>){
-    
-    println("Witaj!")
-    wprowadzDaneUzytkownika()
-    wyswietlmenu()
-    sprawdzanieWyboruOpcji(wprowadzOpcjeMenu())
+    while(koniec == 1) {
+        witaj()
+        wprowadzDaneUzytkownika()
+        wyswietlmenu()
+        sprawdzanieWyboruOpcji(wprowadzOpcjeMenu())
+        wylaczFunkcjeWitajIWprowadzDaneUzytkownika()
+        nacisnijenterabykontynuowac()
+    }
 }
+
+fun witaj(): String{
+    while(witajwprowadzdaneuzytkownika == 1){
+        println("Witaj!")
+    break
+    }
+    return "Witaj!"
+}
+
 
 fun wprowadzDlugosc(): Int{
     println("Wprowadź długość boku nr 1: ")
@@ -52,7 +68,7 @@ fun wyswietlmenu() {
     println("1. Kwadratu")
     println("2. Prostokąta")
     println("3. Trójkąta")
-    println("4. Chcę wyłączyć program")
+    println("4. Koniec")
 }
 
 fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
@@ -68,6 +84,7 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
             println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
         } else if (menuwyboru == 4){
             println("Opuszczanie programu...")
+            koniec = 2
         }
         break
     }
@@ -75,11 +92,16 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
 }
 
 fun wprowadzDaneUzytkownika(): String {
-    println("Poniżej podaj swoje dane.")
-    println("Imię: ")
-    firstname = readLine()!!
-    println("Nazwisko: ")
-    lastname = readLine()!!
+
+    while(witajwprowadzdaneuzytkownika == 1){
+        println("Poniżej podaj swoje dane.")
+        println("Imię: ")
+        firstname = readLine()!!
+        println("Nazwisko: ")
+        lastname = readLine()!!
+    break
+    }
+
     return firstname
 }
 
@@ -87,6 +109,24 @@ fun wprowadzOpcjeMenu(): Int {
     var menuwyboru = readLine()!!.toInt()
     return menuwyboru
 }
+
+fun wylaczFunkcjeWitajIWprowadzDaneUzytkownika(): Int{
+    while(witajwprowadzdaneuzytkownika == 1) {
+        witajwprowadzdaneuzytkownika = 2
+    break
+    }
+    return  witajwprowadzdaneuzytkownika
+}
+
+fun nacisnijenterabykontynuowac(): Int {
+    while(koniec == 1){
+    println("Naciśnij ENTER aby kontynuować.")
+    readLine()
+        break
+    }
+    return 0
+}
+
 
 /*
 Kolejne zadanie
