@@ -30,15 +30,16 @@ fun main(args: Array<String>){
         wprowadzDaneUzytkownika()
         wyswietlmenu()
         sprawdzanieWyboruOpcji(wprowadzOpcjeMenu())
-        wylaczFunkcje()
-        nacisnijenterabykontynuowac()
+        wylFunWProg()
+        if(koniec == false) {
+            nacisnijenterabykontynuowac()
+        }
     }
 }
 
 fun witaj(): String{
-    while(wylFunWProg == true){
+    if(wylFunWProg == true){
         println("Witaj!")
-    break
     }
     return "Witaj!"
 }
@@ -71,7 +72,7 @@ fun wyswietlmenu() {
 }
 
 fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
-    while(menuwyboru > 0) {
+    if(menuwyboru > 0) {
         if (menuwyboru == 1) {
             liczPoleKwadratu()
             println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
@@ -85,48 +86,41 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
             println("Opuszczanie programu...")
             koniec = true
         }
-        break
     }
     return menuwyboru
 }
 
 fun wprowadzDaneUzytkownika(): String {
 
-    while(wylFunWProg == true){
+    if(wylFunWProg == true){
         println("Poniżej podaj swoje dane.")
         println("Imię: ")
         firstname = readLine()!!
         println("Nazwisko: ")
         lastname = readLine()!!
-    break
     }
 
     return firstname
 }
 
 fun wprowadzOpcjeMenu(): Int {
-    var menuwyboru = readLine()!!.toInt()
+    val menuwyboru = readLine()!!.toInt()
     return menuwyboru
 }
 
-fun wylaczFunkcje(): Boolean{
-    while(wylFunWProg == true) {
+fun wylFunWProg(): Boolean{
+    if(wylFunWProg == true) {
         wylFunWProg = false
-    break
     }
     return wylFunWProg
 }
 
-fun nacisnijenterabykontynuowac(): Int {
-    while(koniec == false){
+fun nacisnijenterabykontynuowac(){
     println("Naciśnij ENTER aby kontynuować.")
     readLine()
         for(x in 1..25){
             println("")
         }
-      break
-    }
-    return 0
 }
 
 
