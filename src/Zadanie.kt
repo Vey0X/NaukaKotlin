@@ -22,27 +22,28 @@ Kod programu poniżej tego komentarza
 var firstname = "asd"
 var lastname = "asd"
 var koniec = false
-var wylFunWProg = true
+//var wylFunWProg = true
 
 fun main(args: Array<String>){
-    while(koniec == false) {
-        witaj()
-        wprowadzDaneUzytkownika()
+    println("Witaj!")
+    wprowadzDaneUzytkownika()
+    while(koniec == false) {            //to samo 1
+      //  witaj()
         wyswietlmenu()
-        sprawdzanieWyboruOpcji(wprowadzOpcjeMenu())
-        wylFunWProg()
-        if(koniec == false) {
+        sprawdzanieWyboruOpcji(readLine()!!.toInt())
+     //   wylFunWProg()
+   //     if(koniec == false) {           //to samo 2. Wiec po co ten if ?
             nacisnijenterabykontynuowac()
-        }
+   //     }
     }
 }
-
-fun witaj(): String{
-    if(wylFunWProg == true){
-        println("Witaj!")
-    }
-    return "Witaj!"
-}
+//
+//fun witaj(): String{
+//    if(wylFunWProg == true){        //funkcja nic nie robi
+//        println("Witaj!")
+//    }
+//    return "Witaj!"
+//}
 
 
 fun wprowadzDlugosc(): Int{
@@ -72,7 +73,7 @@ fun wyswietlmenu() {
 }
 
 fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
-    if(menuwyboru > 0) {
+    if(menuwyboru > 0) {        //po co ten if ?
         if (menuwyboru == 1) {
             liczPoleKwadratu()
             println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
@@ -90,30 +91,30 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
     return menuwyboru
 }
 
-fun wprowadzDaneUzytkownika(): String {
+fun wprowadzDaneUzytkownika() {
 
-    if(wylFunWProg == true){
+ //   if(wylFunWProg == true){
         println("Poniżej podaj swoje dane.")
         println("Imię: ")
         firstname = readLine()!!
         println("Nazwisko: ")
         lastname = readLine()!!
-    }
+  //  }
 
-    return firstname
+ //   return firstname
 }
+//                                  ta funkcja tez nic nie robi
+//fun wprowadzOpcjeMenu(): Int {
+//    val menuwyboru = readLine()!!.toInt()
+//    return menuwyboru
+//}
 
-fun wprowadzOpcjeMenu(): Int {
-    val menuwyboru = readLine()!!.toInt()
-    return menuwyboru
-}
-
-fun wylFunWProg(): Boolean{
-    if(wylFunWProg == true) {
-        wylFunWProg = false
-    }
-    return wylFunWProg
-}
+//fun wylFunWProg(): Boolean{
+//    if(wylFunWProg == true) {
+//        wylFunWProg = false
+//    }
+//    return wylFunWProg
+//}
 
 fun nacisnijenterabykontynuowac(){
     println("Naciśnij ENTER aby kontynuować.")
