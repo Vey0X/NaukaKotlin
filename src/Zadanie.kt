@@ -60,7 +60,6 @@ fun wyswietlmenu() {
 }
 
 fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
-    if(menuwyboru > 0) {        //po co ten if ?
         if (menuwyboru == 1) {
             liczPoleKwadratu()
             println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
@@ -70,11 +69,15 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
         } else if (menuwyboru == 3){
             liczPoleTrojkata()
             println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
-        } else if (menuwyboru == 4){
+        } else if (menuwyboru == 4) {
             println("Opuszczanie programu...")
             koniec = true
+        } else if (menuwyboru > 4 || menuwyboru < 1){
+            println("Podano nieprawidłową liczbę.")
+            koniec == true
+            wyswietlmenu()
+           sprawdzanieWyboruOpcji(readLine()!!.toInt())
         }
-    }
     return menuwyboru
 }
 
