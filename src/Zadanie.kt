@@ -22,29 +22,16 @@ Kod programu poniżej tego komentarza
 var firstname = "asd"
 var lastname = "asd"
 var koniec = false
-//var wylFunWProg = true
 
 fun main(args: Array<String>){
     println("Witaj!")
     wprowadzDaneUzytkownika()
-    while(koniec == false) {            //to samo 1
-      //  witaj()
+    while(koniec == false) {
         wyswietlmenu()
         sprawdzanieWyboruOpcji(readLine()!!.toInt())
-     //   wylFunWProg()
-   //     if(koniec == false) {           //to samo 2. Wiec po co ten if ?
             nacisnijenterabykontynuowac()
-   //     }
     }
 }
-//
-//fun witaj(): String{
-//    if(wylFunWProg == true){        //funkcja nic nie robi
-//        println("Witaj!")
-//    }
-//    return "Witaj!"
-//}
-
 
 fun wprowadzDlugosc(): Int{
     println("Wprowadź długość boku nr 1: ")
@@ -56,8 +43,8 @@ fun liczPoleKwadratu(dlugosc: Int = 0): Int{
     return dlugosc*dlugosc;
 }
 
-fun liczPoleProstokata(dlugosc1: Int = 0, dlugosc2: Int = 0): Int{
-  return dlugosc1*dlugosc2
+fun liczPoleProstokata(dlugosc1: Int = 0, dlugosc2: Int = 0): Int {
+    return dlugosc1 * dlugosc2
 }
 
 fun liczPoleTrojkata(dlugosct1: Int = 0, dlugosct2: Int = 0): Int{
@@ -92,29 +79,12 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
 }
 
 fun wprowadzDaneUzytkownika() {
-
- //   if(wylFunWProg == true){
         println("Poniżej podaj swoje dane.")
         println("Imię: ")
         firstname = readLine()!!
         println("Nazwisko: ")
         lastname = readLine()!!
-  //  }
-
- //   return firstname
 }
-//                                  ta funkcja tez nic nie robi
-//fun wprowadzOpcjeMenu(): Int {
-//    val menuwyboru = readLine()!!.toInt()
-//    return menuwyboru
-//}
-
-//fun wylFunWProg(): Boolean{
-//    if(wylFunWProg == true) {
-//        wylFunWProg = false
-//    }
-//    return wylFunWProg
-//}
 
 fun nacisnijenterabykontynuowac(){
     println("Naciśnij ENTER aby kontynuować.")
@@ -123,8 +93,3 @@ fun nacisnijenterabykontynuowac(){
             println("")
         }
 }
-
-
-/*
-Na gwiazdkę. Spróbuj za każdym wynikiem wyświetlić 'Naciśnij enter' Po naciśnięciu 'enter' ładnie wyczyści cały tekst i program wróci na początek,(wyswietli menu)
- */
