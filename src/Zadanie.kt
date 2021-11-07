@@ -1,3 +1,4 @@
+import kotlin.system.exitProcess
 
 /*
 Zadanie
@@ -21,12 +22,11 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
-var koniec = false
 
 fun main(args: Array<String>){
     println("Witaj!")
     wprowadzDaneUzytkownika()
-    while(koniec == false) {
+    while(true){
         wyswietlmenu()
         sprawdzanieWyboruOpcji(readLine()!!.toInt())
             nacisnijenterabykontynuowac()
@@ -71,12 +71,11 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
             println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
         } else if (menuwyboru == 4) {
             println("Opuszczanie programu...")
-            koniec = true
+            exitProcess(status = 0)
         } else if (menuwyboru > 4 || menuwyboru < 1){
             println("Podano nieprawidłową liczbę.")
-            koniec == true
             wyswietlmenu()
-           sprawdzanieWyboruOpcji(readLine()!!.toInt())
+            sprawdzanieWyboruOpcji(readLine()!!.toInt())
         }
     return menuwyboru
 }
