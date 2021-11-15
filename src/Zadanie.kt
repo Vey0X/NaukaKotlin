@@ -75,7 +75,7 @@ fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
         } else if (menuwyboru > 4 || menuwyboru < 1){
             println("Podano nieprawidłową liczbę.")
             wyswietlmenu()
-            sprawdzanieWyboruOpcji(readLine()!!.toInt())
+            sprawdzanieWyboruOpcji(readLine()!!.toInt())            //Spróbuj innym sposobem to zrobić.
         }
     return menuwyboru
 }
