@@ -22,14 +22,16 @@ Kod programu poniżej tego komentarza
 
 var firstname = "asd"
 var lastname = "asd"
+var menuwyboru: Int = 0
+var koniec: Boolean = false
 
 fun main(args: Array<String>){
     println("Witaj!")
     wprowadzDaneUzytkownika()
-    while(true){
+    while(koniec == false){
         wyswietlmenu()
         sprawdzanieWyboruOpcji(readLine()!!.toInt())
-            nacisnijenterabykontynuowac()
+            nacisnijEnterAbyKontynuowac()
     }
 }
 
@@ -59,26 +61,33 @@ fun wyswietlmenu() {
     println("4. Koniec")
 }
 
-fun sprawdzanieWyboruOpcji(menuwyboru: Int = 0): Int{
-        if (menuwyboru == 1) {
+fun sprawdzanieWyboruOpcji(menuwyboru: Int) {
+
+
+    when(menuwyboru){
+        1->{
             liczPoleKwadratu()
             println("Pole kwadratu to: " + liczPoleKwadratu(wprowadzDlugosc()))
-        } else if (menuwyboru == 2) {
+        }
+        2->{
             liczPoleProstokata()
             println("Pole prostokąta to: " + liczPoleProstokata(wprowadzDlugosc(), wprowadzDlugosc()))
-        } else if (menuwyboru == 3){
+        }
+        3->{
             liczPoleTrojkata()
             println("Pole trójkąta to: " + liczPoleTrojkata(wprowadzDlugosc(),wprowadzDlugosc()))
-        } else if (menuwyboru == 4) {
-            println("Opuszczanie programu...")
-            exitProcess(status = 0)
-        } else if (menuwyboru > 4 || menuwyboru < 1){
-            println("Podano nieprawidłową liczbę.")
-            nacisnijenterabykontynuowac()
-            wyswietlmenu()
-            sprawdzanieWyboruOpcji(readLine()!!.toInt())            //Spróbuj innym sposobem to zrobić.
         }
-    return menuwyboru
+        4->{
+            println("Opuszczanie programu...")
+            koniec = true
+        }
+        else->{
+            println("Podano nieprawidłową liczbę.")
+            nacisnijEnterAbyKontynuowac()
+            wyswietlmenu()
+        }
+    }
+    return
 }
 
 fun wprowadzDaneUzytkownika() {
@@ -89,7 +98,7 @@ fun wprowadzDaneUzytkownika() {
         lastname = readLine()!!
 }
 
-fun nacisnijenterabykontynuowac(){
+fun nacisnijEnterAbyKontynuowac(){
     println("Naciśnij ENTER aby kontynuować.")
     readLine()
         for(x in 1..25){
