@@ -1,24 +1,3 @@
-import kotlin.system.exitProcess
-
-/*
-Zadanie
-
-Program zgodnie ze specyfikacją:
-
-1 - proszenie usera o dane do zadania
-2 - menu wyboru (1 do 3)
-3 - liczenie pola kwadratu
-4 - liczenie pola trójkąta
-5 - liczenie pola prostokąta
-
-Funkcja wyświetlająca komunikaty wyswietl()
-Funkcja pobierzDane()
-
-Wraz z pisaniem dodajemy kolejne funkcje
-Kolejne kroki: logowanie/rejestracja, interfejs graficzny.
-
-Kod programu poniżej tego komentarza
- */
 
 var firstname = "asd"
 var lastname = "asd"
