@@ -1,13 +1,7 @@
+import kotlin.random.Random
 
 var tekst: String = ""
 var konieckoder: Boolean = false
-var menuKodera: Int = 0
-var tekstdekoder: String = ""
-var dekoder: Char = '\u0000'
-var dekoderPetla = 1
-var iloscznakow = 0
-var iloscpetli = 0
-var licznik = 0
 
 fun main (args: Array<String>){
     println("Witaj!")
@@ -26,6 +20,7 @@ fun wyswietlMenuKodera (){
 }
 
 fun sprawdzanieMenuKodera (){
+    var menuKodera: Int = 0
 
     menuKodera = readLine()!!.toInt()
 
@@ -35,7 +30,7 @@ fun sprawdzanieMenuKodera (){
             kodowanie()
         }
         2 -> {
-            wprowadzTekstDekoder()
+            wprowadzTekst()
             dekodowanie()
         }
         3 -> {
@@ -43,37 +38,63 @@ fun sprawdzanieMenuKodera (){
             konieckoder = true
         }
     }
-return
+    return
 }
 
 fun wprowadzTekst (){
-    println("Wprowadź tekst do zakodowania.")
+    println("Wprowadź tekst")
     tekst = readLine()!!
     println("")
 }
 
 fun kodowanie (){
-    tekst.forEach {
-        print(it.toChar().hashCode())
-    }
-}
+    var rotacja = ""
 
-fun wprowadzTekstDekoder (){
-    println("Wprowadź tekst do odkodowania.")
-    tekstdekoder = readLine()!!
-    println("")
+    val charPool : List<Char> = ('a'..'z') + ('A'..'Z')
+    tekst.forEach {
+        // print( (it.toChar().hashCode()).toString().length )
+        rotacja = rotacja.plus((it.toChar().hashCode()).toString().length)
+        //  print(it.toChar().hashCode())
+        rotacja = rotacja.plus(it.toChar().hashCode())
+        val randomString = (1..Random.nextInt(0,3))
+            .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
+            .map(charPool::get)
+            .joinToString("");
+
+        //  print(randomString)
+        rotacja = rotacja.plus(randomString)
+    }
+    rotacja = rotacja.reversed()
+    //println()
+    println(rotacja)
+
 }
 
 fun dekodowanie () {
-    tekstdekoder
-
-    iloscznakow = tekstdekoder.length
-    iloscpetli = iloscznakow / 2
-
-    for(x in 0..iloscpetli)
-    print((tekstdekoder[licznik+2] + "" + tekstdekoder[licznik+2]).toInt().toChar())
-    println("")
+    var licznik = 0
+    tekst = tekst.reversed()
+    while ( (licznik != tekst.length)){
+        try {
+            when (tekst[licznik].toString()) {
+                "1" -> {
+                    print((tekst[licznik + 1]).toInt().toChar())
+                    licznik = licznik + 2
+                }
+                "2" -> {
+                    print((tekst[licznik + 1] + "" + tekst[licznik + 2]).toInt().toChar())
+                    licznik = licznik + 3
+                }
+                "3" -> {
+                    print((tekst[licznik + 1] + "" + tekst[licznik + 2] + "" + tekst[licznik + 3]).toInt().toChar())
+                    licznik = licznik + 4
+                }
+                else -> {
+                    licznik = licznik + 1
+                }
+            }
+        }catch (e: NumberFormatException){
+            println("zły kod dekodera")
+            break
+        }
+    }
 }
-
-
-
