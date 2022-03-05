@@ -22,7 +22,7 @@ fun wyswietlMenuKodera (){
 fun sprawdzanieMenuKodera (){
     var menuKodera: Int = 0
 
-    menuKodera = readLine()!!.toInt()
+    menuKodera = readLine()!!.toInt() // ZADANIE dla Ciebie. zabezpiecz, by po wpisaniu litery np: a(w menu), nie wysypało programu
 
     when(menuKodera) {
         1 -> {
@@ -92,9 +92,18 @@ fun dekodowanie () {
                     licznik = licznik + 1
                 }
             }
-        }catch (e: NumberFormatException){
-            println("zły kod dekodera")
+
+        }catch(e: Exception) {
+                when(e) {
+                    is NumberFormatException->{
+                        println("Kod uległ uszkodzeniu")
+                    }
+                    is StringIndexOutOfBoundsException -> {
+                        println("Nie można przetworzyć kodu")
+                    }
+                    else -> throw e
+                }
             break
-        }
+            }
     }
 }
