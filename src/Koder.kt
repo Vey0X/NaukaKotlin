@@ -19,26 +19,36 @@ fun wyswietlMenuKodera (){
     println("3. Koniec")
 }
 
-fun sprawdzanieMenuKodera (){
+fun sprawdzanieMenuKodera () {
     var menuKodera: Int = 0
 
-    menuKodera = readLine()!!.toInt() // ZADANIE dla Ciebie. zabezpiecz, by po wpisaniu litery np: a(w menu), nie wysypało programu
+    try {
+        menuKodera =
+            readLine()!!.toInt() // ZADANIE dla Ciebie. zabezpiecz, by po wpisaniu litery np: a(w menu), nie wysypało programu
 
-    when(menuKodera) {
-        1 -> {
-            wprowadzTekst()
-            kodowanie()
+        when (menuKodera) {
+            1 -> {
+                wprowadzTekst()
+                kodowanie()
+            }
+            2 -> {
+                wprowadzTekst()
+                dekodowanie()
+            }
+            3 -> {
+                println("Opuszczanie programu...")
+                konieckoder = true
+            }
+            else -> {
+                println("")
+                println("Wprowadzono nie prawidłową liczbe.")
+            }
         }
-        2 -> {
-            wprowadzTekst()
-            dekodowanie()
-        }
-        3 -> {
-            println("Opuszczanie programu...")
-            konieckoder = true
-        }
+        return
+    }catch (e: NumberFormatException){
+        println("")
+        println("Wprowadzono nie prawidłowy znak.")
     }
-    return
 }
 
 fun wprowadzTekst (){
@@ -60,14 +70,10 @@ fun kodowanie (){
             .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
             .map(charPool::get)
             .joinToString("");
-
-        //  print(randomString)
         rotacja = rotacja.plus(randomString)
     }
     rotacja = rotacja.reversed()
-    //println()
     println(rotacja)
-
 }
 
 fun dekodowanie () {
