@@ -20,22 +20,20 @@ fun wyswietlMenuKodera (){
 }
 
 fun sprawdzanieMenuKodera () {
-    var menuKodera: Int = 0
+    var menuKodera: String = ""
 
-    try {
-        menuKodera =
-            readLine()!!.toInt() // ZADANIE dla Ciebie. zabezpiecz, by po wpisaniu litery np: a(w menu), nie wysypało programu
+        menuKodera = readLine()!!
 
         when (menuKodera) {
-            1 -> {
+            "1" -> {
                 wprowadzTekst()
                 kodowanie()
             }
-            2 -> {
+            "2" -> {
                 wprowadzTekst()
                 dekodowanie()
             }
-            3 -> {
+            "3" -> {
                 println("Opuszczanie programu...")
                 konieckoder = true
             }
@@ -45,10 +43,6 @@ fun sprawdzanieMenuKodera () {
             }
         }
         return
-    }catch (e: NumberFormatException){
-        println("")
-        println("Wprowadzono nie prawidłowy znak.")
-    }
 }
 
 fun wprowadzTekst (){
@@ -62,9 +56,7 @@ fun kodowanie (){
 
     val charPool : List<Char> = ('a'..'z') + ('A'..'Z')
     tekst.forEach {
-        // print( (it.toChar().hashCode()).toString().length )
         rotacja = rotacja.plus((it.toChar().hashCode()).toString().length)
-        //  print(it.toChar().hashCode())
         rotacja = rotacja.plus(it.toChar().hashCode())
         val randomString = (1..Random.nextInt(0,3))
             .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
